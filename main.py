@@ -112,6 +112,15 @@ test_loss, test_acc = model.evaluate(test_images, test_lables)
 print(f'Test Accuracy: {test_acc}')
 
 
+#Save model
+model.save('hotdog_nothotdog_ai.model')
+
+#Reload model
+#new_model = tf.keras.models.load_model('hotdog_nothotdog_ai.model')
+
+#new predictions with list of images
+#predictions2 = new_model.predict([test_images])
+
 
 # Visar 25 första gissningarna och svar
 predictions = model.predict(test_images)
@@ -142,4 +151,5 @@ while i < 25:
     i = i + 1
 
 plt.show()
+
 
