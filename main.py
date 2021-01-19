@@ -12,6 +12,7 @@ import random
 
 files=glob.glob("/Users/andreas/Desktop/programmering/python/deep learning/hot dog not hot dog/hotdog-nothotdog/train/hotdog/*.jpg")
 TrainData = []
+TestData = []
 index = 0
 
 for file in files:
@@ -59,10 +60,10 @@ random.shuffle(TestData)
 print("TrainData ",len(TrainData))
 print("TrainData ",len(TestData))
 
-#Läser in data till tuples
+#Läser in data i tuples
 
 (train_images, train_lables) = np.array([item[0] for item in TrainData]), np.array([item[1] for item in TrainData])
-(test_images, test_lables) = np.array([item[0] for item in TrainData]), np.array([item[1] for item in TrainData])
+(test_images, test_lables) = np.array([item[0] for item in TestData]), np.array([item[1] for item in TestData])
 
 #normaliserar data -> svart/vit
 train_images = train_images / 255.0
